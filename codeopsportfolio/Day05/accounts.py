@@ -1,146 +1,115 @@
-# class Account:
-#     # Step 1: Define Account with owner, account_number, and a private __balance
-#     def __init__(self, owner: str, account_number: str, initial_balance: float = 0.0):
-#         self.owner = owner
-#         self.account_number = account_number
-#          # Private attribute (prefixed with double underscore)
-#         if initial_balance < 0:
-#             print("⚠️ Initial balance cannot be negative. Setting to 0.0 ETB.")
-#             self.__balance = 0.0
-#         else:
-#             self.__balance = float(initial_balance)
-#              # Step 2: Add a @property to read the balance (no direct edits allowed)
-#     @property
-#     def balance(self) -> float:
-#         """Getter method to securely read the balance."""
-#         return self.__balance
-
-#     # Step 3 & 4: Write deposit() with validation
-#     def deposit(self, amount: float) -> bool:
-#         """Deposits a positive amount into the account."""
-#         if amount <= 0:
-#             print(f"❌ Transaction Rejected: Cannot deposit a negative or zero amount ({amount} ETB) for {self.owner}.")
-#             return False
-        
-#         self.__balance += amount
-#         print(f"✅ Deposit Successful: Added {amount:.2f} ETB to {self.owner}'s account. New Balance: {self.balance:.2f} ETB.")
-#         return True
-
-#     # Step 3 & 4: Write withdraw() with validation
-#     def withdraw(self, amount: float) -> bool:
-#         """Withdraws a valid amount if there are sufficient funds."""
-#         if amount <= 0:
-#             print(f"❌ Transaction Rejected: Withdrawal amount must be positive ({amount} ETB) for {self.owner}.")
-#             return False
-            
-#         # Reject overdrafts
-#         if amount > self.__balance:
-#             print(f"❌ Transaction Rejected: Insufficient funds for {self.owner}. Attempted: {amount:.2f} ETB | Available: {self.balance:.2f} ETB.")
-#             return False
-            
-#         self.__balance -= amount
-#         print(f"✅ Withdrawal Successful: Deducted {amount:.2f} ETB from {self.owner}'s account. New Balance: {self.balance:.2f} ETB.")
-#         return True
-
-
-# # Step 5: Create two accounts and run some transactions to test
-# if __name__ == "__main__":
-#     print("==================================================")
-#     print("            ADDIS BANK TRANSACTION TEST           ")
-#     print("==================================================\n")
-
-#     # 1. Create two separate accounts
-#     print("--- Creating Accounts ---")
-#     acct1 = Account(owner="Almaz", account_number="AB-1001", initial_balance=1500.0)
-#     acct2 = Account(owner="Dawit", account_number="AB-1002", initial_balance=500.0)
-#     print(f"Account 1: {acct1.owner} ({acct1.account_number}) | Balance: {acct1.balance:.2f} ETB")
-#     print(f"Account 2: {acct2.owner} ({acct2.account_number}) | Balance: {acct2.balance:.2f} ETB\n")
-
-#     # 2. Run transactions on Almaz's account
-#     print(f"--- Transactions for {acct1.owner} ---")
-#     acct1.deposit(500.0)         # Valid deposit
-#     acct1.withdraw(300.0)        # Valid withdrawal
-#     acct1.deposit(-100.0)        # Invalid negative deposit
-#     acct1.withdraw(2000.0)       # Invalid withdrawal (overdraft)
-#     print("")
-
-#     # 3. Run transactions on Dawit's account
-#     print(f"--- Transactions for {acct2.owner} ---")
-#     acct2.withdraw(600.0)        # Invalid withdrawal (overdraft)
-#     acct2.deposit(250.50)        # Valid deposit
-#     acct2.withdraw(100.0)        # Valid withdrawal
-#     print("\n==================================================")
-#     print("            FINAL ACCOUNT STATUSES                ")
-#     print("==================================================")
-#     print(f"👤 {acct1.owner:<8} ({acct1.account_number}) | Final Balance: {acct1.balance:>8.2f} ETB")
-#     print(f"👤 {acct2.owner:<8} ({acct2.account_number}) | Final Balance: {acct2.balance:>8.2f} ETB")
-#     print("==================================================")
-
-
 # =====================================================================
 # File Name: day05/accounts.py
-# Goal: Implement Inheritance and Polymorphism
+# Goal: Build Savings/Current Accounts with a Polymorphic Loop
 # =====================================================================
 
-# Parent class (from day 04)
 class Account:
-    def __init__(self, owner, account_number, balance=0.0):
+    """Base parent Account class with encapsulation."""
+    def __init__(self, owner: str, account_number: str, initial_balance: float = 0.0):
         self.owner = owner
         self.account_number = account_number
-        self.__balance = float(balance)
+        self.__balance = float(initial_balance) if initial_balance >= 0 else 0.0
 
     @property
-    def balance(self):
+    def balance(self) -> float:
+        """Secure getter for __balance."""
         return self.__balance
 
-    def deposit(self, amount):
+    def deposit(self, amount: float) -> bool:
+        if amount <= 0:
+            print("❌ Invalid Deposit Amount")
+            return False
         self.__balance += amount
+        return True
 
-    def withdraw(self, amount):
-        if amount <= self.__balance:
-            self.__balance -= amount
-            return True
-        return False
+    def withdraw(self, amount: float) -> bool:
+        if amount <= 0 or amount > self.__balance:
+            print("❌ Invalid Withdrawal or Insufficient Funds")
+            return False
+        self.__balance -= amount
+        return True
 
-    def statement(self):
+    def statement(self) -> str:
+        """Base representation statement."""
         return f"Account {self.account_number} ({self.owner}): {self.balance:.2f} ETB"
 
-# Child Class 1: Savings Account
+
+# Step 2: Add SavingsAccount with a rate and add_interest()
 class SavingsAccount(Account):
-    def __init__(self, owner, account_number, balance=0.0, rate=0.05):
-        super().__init__(owner, account_number, balance)
+    """Child class inheriting from Account with an interest rate."""
+    def __init__(self, owner: str, account_number: str, initial_balance: float = 0.0, rate: float = 0.05):
+        super().__init__(owner, account_number, initial_balance)
         self.rate = rate
 
     def add_interest(self):
+        """Calculates interest and deposits it directly."""
         interest = self.balance * self.rate
         self.deposit(interest)
 
-    def statement(self): # Overridden method
-        return f"Savings Account {self.account_number} ({self.owner}): {self.balance:.2f} ETB"
+    # Step 4: Override statement() to label the account type
+    def statement(self) -> str:
+        return f"[Savings] Account {self.account_number} ({self.owner}): {self.balance:.2f} ETB"
 
-# Child Class 2: Current Account
+
+# Step 3: Add CurrentAccount with an overdraft and overridden withdraw()
 class CurrentAccount(Account):
-    def __init__(self, owner, account_number, balance=0.0, overdraft=500.0):
-        super().__init__(owner, account_number, balance)
+    """Child class inheriting from Account with an overdraft limit."""
+    def __init__(self, owner: str, account_number: str, initial_balance: float = 0.0, overdraft: float = 500.0):
+        super().__init__(owner, account_number, initial_balance)
         self.overdraft = overdraft
 
-    def withdraw(self, amount): # Overridden method
-        if amount <= (self.balance + self.overdraft):
-            self.deposit(-amount) # simplified logic for overdraft
-            return True
-        return False
+    # Override withdraw to allow spending into the overdraft limit
+    def withdraw(self, amount: float) -> bool:
+        if amount <= 0:
+            return False
+        
+        # Override calculation: Check if amount exceeds balance + overdraft limit
+        if amount > (self.balance + self.overdraft):
+            print(f"❌ Rejection: Overdraft limit exceeded for {self.owner}.")
+            return False
+        
+        # Perform withdrawal by overriding the parent's encapsulated deduction mechanism
+        # (Using a trick of withdrawing current balance then adjusting base if needed)
+        current_bal = self.balance
+        if amount <= current_bal:
+            super().withdraw(amount)
+        else:
+            # Empty main balance first
+            super().withdraw(current_bal)
+            # Take the rest from overdraft
+            overdrawn_amount = amount - current_bal
+            # Utilize base deposit with a negative amount to force balance below zero
+            self._Account__balance = -overdrawn_amount # Accessing name-mangled private attribute safely
+        return True
 
-    def statement(self): # Overridden method
-        return f"Current Account {self.account_number} ({self.owner}): {self.balance:.2f} ETB"
+    # Step 4: Override statement() to label the account type
+    def statement(self) -> str:
+        return f"[Current] Account {self.account_number} ({self.owner}): {self.balance:.2f} ETB"
 
-# Step 5: Polymorphic Loop
-accounts = [
-    SavingsAccount("Almaz", "S-001", 1000),
-    CurrentAccount("Dawit", "C-001", 200),
-    SavingsAccount("Hanna", "S-002", 500)
-]
 
-print("--- Account Statements ---")
-for acc in accounts:
-    # Polymorphism: calling statement() works for different classes automatically
-    print(acc.statement())
+# Step 5: Loop over a mixed list and call statement()
+if __name__ == "__main__":
+    print("==========================================")
+    print("         DAY 5: POLYMORPHISM DEMO         ")
+    print("==========================================\n")
+
+    # Mixed list containing base Account, SavingsAccount, and CurrentAccount
+    accounts_list = [
+        Account("Abebe", "ACT-001", 1000.0),
+        SavingsAccount("Almaz", "SAV-101", 5000.0, rate=0.07),
+        CurrentAccount("Dawit", "CUR-201", 200.0, overdraft=300.0)
+    ]
+
+    # Demonstrate Polymorphism: Loop and run statement() on each object
+    for acc in accounts_list:
+        print(acc.statement())
+
+    print("\n--- Simulating Extra Features ---")
+    # Apply interest to Almaz
+    accounts_list[1].add_interest()
+    # Withdraw past limit for Dawit
+    accounts_list[2].withdraw(300.0) # Uses overdraft successfully
+    
+    print("\n--- Final Status After Transactions ---")
+    for acc in accounts_list:
+        print(acc.statement())

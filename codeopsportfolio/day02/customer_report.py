@@ -12,5 +12,7 @@ for num in range(1, 11):
               total =  price - price * price
               return total
           print(apply_discount(price,percent))
+          price =int(input("enter price"))
+          def apply_discount(price,percent)
     
         

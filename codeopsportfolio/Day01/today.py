@@ -10,5 +10,3 @@ def calculate_split_share(bill_amount, tip_percentage, total_people):
     
     return grand_total, share_per_person
 
-
-

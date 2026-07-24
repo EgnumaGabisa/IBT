@@ -1,3 +1,19 @@
+
+class TreeNode:
+    def __init__(self, name):
+        self.name = name
+        self.children = []  # Stores sub-folders or files
+
+    def add_child(self, child_node):
+        self.children.append(child_node)
+
+    def display(self, level=0):
+        """Prints the tree hierarchy using indentation."""
+        indent = "   " * level
+        print(f"{indent}📁 {self.name}")
+        for child in self.children:
+            child.display(level + 1)
+
 # # Binary Search Tree
 class TreeNode:
   def __init__(self, data):

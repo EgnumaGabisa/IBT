@@ -1,0 +1,142 @@
+<!-- exercise 1 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ethio Telecom Service Registration</title>
+</head>
+<body>
+
+
+  <form action="/register-service" method="post">
+    <h2>Ethio Telecom Service Registration</h2>
+
+      <label for="fullName">Full Name:</label>
+      <input 
+        type="text" 
+        id="fullName" 
+        name="fullName" 
+        required 
+        placeholder="e.g. Abebe Bikila"
+      >
+    
+
+    <br><br>
+    
+      <label for="email">Email Address:</label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        required 
+        placeholder="name@example.com">
+      
+
+    <br><br>
+    
+      <label for="phone">Phone Number:</label>
+      <input 
+        type="tel" 
+        id="phone" 
+        name="phone" 
+        required 
+        pattern="\+251[0-9]{9}" 
+        title="Phone number must start with +251 followed by 9 digits (e.g., +251911234567)" 
+        placeholder="+251911234567"
+      >
+    
+<br>
+    <br>
+
+    <!-- Branch Selection -->
+    
+      <label for="branch">Preferred Branch:</label>
+      <select id="branch" name="branch" required>
+        <option value="" disabled selected>-- Select a Branch --</option>
+        <option value="bole">Bole</option>
+        <option value="kazanchis">Kazanchis</option>
+        <option value="piassa">Piassa</option>
+      </select>
+    
+
+    <br>
+
+    <button type="submit">Register Service</button>
+  </form>
+
+
+  <table border="1" cellpadding="8" cellspacing="0">
+  <caption><h1></h1> Airlines Daily Flight Schedule</caption>
+  <thead>
+    <tr>
+      <th scope="col">Flight</th>
+      <th scope="col">From</th>
+      <th scope="col">To</th>
+      <th scope="col">Departs</th>
+      <th scope="col">Price ETB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ET 302</td>
+      <td>Addis Ababa (ADD)</td>
+      <td>Nairobi (NBO)</td>
+      <td>08:15 AM</td>
+      <td>18,500</td>
+    </tr>
+    <tr>
+      <td>ET 608</td>
+      <td>Addis Ababa (ADD)</td>
+      <td>Bangkok (BKK)</td>
+      <td>11:40 PM</td>
+      <td>45,200</td>
+    </tr>
+    <tr>
+      <td>ET 500</td>
+      <td>Addis Ababa (ADD)</td>
+      <td>Washington D.C. (IAD)</td>
+      <td>10:00 AM</td>
+      <td>68,000</td>
+    </tr>
+    <tr>
+      <td>ET 700</td>
+      <td>Addis Ababa (ADD)</td>
+      <td>London (LHR)</td>
+      <td>01:30 AM</td>
+      <td>54,300</td>
+    </tr>
+    <tr>
+      <td>ET 809</td>
+      <td>Addis Ababa (ADD)</td>
+      <td>Johannesburg (JNB)</td>
+      <td>08:45 AM</td>
+      <td>28,900</td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="0" cellpadding="10" cellspacing="0" width="100%">
+    <tr>
+      <!-- Landmark Figure Cell -->
+      <td width="50%" valign="top">
+        <figure>
+          <img 
+            src="tuludimtu.jpg"
+            width="100%"
+            height="280"
+          >
+          <figcaption>
+            <strong>Tullu Dimtu </strong>- is the second-highest mountain in Ethiopia (after Ras Dashen) and the highest peak in the Bale Mountains range, rising 4,377 meters (14,360 feet) above sea level.
+          </figcaption>
+        </figure>
+      </td>
+
+      <!-- Map iFrame Cell -->
+      <td width="50%" valign="top">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31692.264457934714!2d39.819399999999995!3d6.8264999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b61821d2c1dcc7%3A0x877a14395618c266!2sMount%20Tullu%20Dimtu!5e0!3m2!1sen!2set!4v1785445859133!5m2!1sen!2set" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

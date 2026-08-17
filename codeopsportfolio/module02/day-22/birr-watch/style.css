@@ -1,0 +1,798 @@
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2f7,
+            #f8fafc
+        );
+
+    color: #1f2937;
+
+    overflow-x: hidden;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.header {
+    width: 100%;
+
+    text-align: center;
+
+    padding: 45px 20px 30px;
+}
+
+
+.logo {
+    font-size: clamp(30px, 5vw, 44px);
+
+    font-weight: 800;
+
+    color: #111827;
+}
+
+
+.logo span {
+    color: #166534;
+}
+
+
+.header p {
+    margin-top: 10px;
+
+    font-size: 17px;
+
+    color: #64748b;
+}
+
+
+/* ==================================================
+   MAIN CONTAINER
+================================================== */
+
+.container {
+    width: calc(100% - 30px);
+
+    max-width: 950px;
+
+    margin: 0 auto 40px;
+}
+
+
+/* ==================================================
+   MESSAGES
+================================================== */
+
+.message {
+    width: calc(100% - 30px);
+
+    max-width: 950px;
+
+    margin: 0 auto 15px;
+
+    padding: 14px 18px;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+.error-message {
+    color: #991b1b;
+
+    background: #fee2e2;
+
+    border: 1px solid #fecaca;
+}
+
+
+.success-message {
+    color: #166534;
+
+    background: #dcfce7;
+
+    border: 1px solid #bbf7d0;
+}
+
+
+/* ==================================================
+   STATUS
+================================================== */
+
+.status-card {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 20px;
+
+    margin-bottom: 20px;
+
+    background: white;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.06);
+}
+
+
+.status-card > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.status-dot {
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #f59e0b;
+
+    display: inline-block;
+}
+
+
+.refresh-btn {
+    width: auto;
+
+    margin: 0;
+
+    padding: 8px 15px;
+
+    background: #f1f5f9;
+
+    color: #334155;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+
+.refresh-btn:hover {
+    background: #e2e8f0;
+}
+
+
+/* ==================================================
+   CARD
+================================================== */
+
+.card {
+    width: 100%;
+
+    margin-bottom: 25px;
+
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.07);
+}
+
+
+.card-header {
+    margin-bottom: 25px;
+}
+
+
+.card-header h1,
+.card-header h2 {
+    color: #111827;
+
+    margin-bottom: 8px;
+}
+
+
+.card-header h1 {
+    font-size: 28px;
+}
+
+
+.card-header h2 {
+    font-size: 24px;
+}
+
+
+.card-header p {
+    color: #64748b;
+
+    line-height: 1.5;
+}
+
+
+/* ==================================================
+   FORM
+================================================== */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 700;
+
+    color: #111827;
+}
+
+
+input,
+select {
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 15px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 7px;
+
+    background: white;
+
+    color: #111827;
+
+    font-size: 16px;
+
+    transition: 0.2s;
+}
+
+
+input:focus,
+select:focus {
+    outline: none;
+
+    border-color: #166534;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 101, 52, 0.12);
+}
+
+
+input::placeholder {
+    color: #94a3b8;
+}
+
+
+/* ==================================================
+   ETB INPUT
+================================================== */
+
+.input-wrapper {
+    position: relative;
+}
+
+
+.input-symbol {
+    position: absolute;
+
+    left: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #166534;
+
+    font-weight: bold;
+
+    pointer-events: none;
+}
+
+
+.input-wrapper input {
+    padding-left: 55px;
+}
+
+
+/* ==================================================
+   BUTTONS
+================================================== */
+
+.button-group {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-top: 10px;
+}
+
+
+button {
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    border-radius: 7px;
+
+    transition:
+        transform 0.15s,
+        background 0.2s;
+}
+
+
+button:active {
+    transform: scale(0.98);
+}
+
+
+.primary-btn,
+.secondary-btn,
+.watch-btn {
+    min-height: 50px;
+
+    padding: 12px 20px;
+}
+
+
+.primary-btn {
+    background: #166534;
+
+    color: white;
+}
+
+
+.primary-btn:hover {
+    background: #14532d;
+}
+
+
+.secondary-btn {
+    background: #1e293b;
+
+    color: white;
+}
+
+
+.secondary-btn:hover {
+    background: #0f172a;
+}
+
+
+.watch-btn {
+    width: 100%;
+
+    background: #334155;
+
+    color: white;
+
+    margin-bottom: 20px;
+}
+
+
+.watch-btn:hover {
+    background: #1e293b;
+}
+
+
+/* ==================================================
+   RESULT
+================================================== */
+
+.result {
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding: 22px;
+
+    text-align: center;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ecfdf5,
+            #f0fdf4
+        );
+
+    border: 1px solid #bbf7d0;
+
+    color: #14532d;
+
+    font-size: 21px;
+
+    line-height: 1.7;
+}
+
+
+.result small {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 14px;
+
+    color: #64748b;
+}
+
+
+/* ==================================================
+   ALL CURRENCIES
+================================================== */
+
+.currency-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+
+.currency-result {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 16px;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 8px;
+
+    background: #f8fafc;
+}
+
+
+.currency-code {
+    font-weight: 800;
+
+    color: #166534;
+}
+
+
+.currency-name {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+.currency-value {
+    text-align: right;
+
+    font-weight: 700;
+
+    color: #111827;
+}
+
+
+/* ==================================================
+   WATCHLIST
+================================================== */
+
+.watchlist-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.watch-count {
+    min-width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #dcfce7;
+
+    color: #166534;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+}
+
+
+.watchlist {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.watch-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+}
+
+
+.watch-info strong {
+    color: #166534;
+
+    font-size: 17px;
+}
+
+
+.watch-info small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #64748b;
+}
+
+
+.remove-btn {
+    width: auto;
+
+    padding: 8px 13px;
+
+    background: #fee2e2;
+
+    color: #991b1b;
+
+    border: 1px solid #fecaca;
+}
+
+
+.remove-btn:hover {
+    background: #fecaca;
+}
+
+
+.empty-watchlist {
+    padding: 20px;
+
+    text-align: center;
+
+    color: #64748b;
+
+    background: #f8fafc;
+
+    border-radius: 8px;
+}
+
+
+/* ==================================================
+   INFORMATION
+================================================== */
+
+.info-card {
+    padding: 25px;
+
+    margin-bottom: 30px;
+
+    background: #e0f2fe;
+
+    border-radius: 10px;
+
+    color: #0c4a6e;
+}
+
+
+.info-card h3 {
+    margin-bottom: 10px;
+}
+
+
+.info-card p {
+    margin-top: 8px;
+
+    line-height: 1.6;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+    width: 100%;
+
+    padding: 25px 20px;
+
+    text-align: center;
+
+    background: #111827;
+
+    color: #cbd5e1;
+}
+
+
+footer p + p {
+    margin-top: 5px;
+
+    font-size: 13px;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: calc(100% - 24px);
+    }
+
+
+    .card {
+        padding: 23px;
+    }
+
+
+    .button-group {
+        grid-template-columns: 1fr;
+    }
+
+
+    .currency-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 480px) {
+
+    .header {
+        padding: 30px 15px 20px;
+    }
+
+
+    .header p {
+        font-size: 14px;
+    }
+
+
+    .container {
+        width: calc(100% - 16px);
+    }
+
+
+    .card {
+        padding: 18px;
+
+        border-radius: 9px;
+    }
+
+
+    .card-header h1 {
+        font-size: 23px;
+    }
+
+
+    .card-header h2 {
+        font-size: 21px;
+    }
+
+
+    input,
+    select {
+        height: 48px;
+
+        font-size: 15px;
+    }
+
+
+    .status-card {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .refresh-btn {
+        width: 100%;
+    }
+
+
+    .watchlist-header {
+        align-items: flex-start;
+    }
+
+
+    .watch-item {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .remove-btn {
+        width: 100%;
+    }
+
+}

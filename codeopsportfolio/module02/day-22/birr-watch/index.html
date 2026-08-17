@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ET Birr Watch</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+            <span>ET</span> Birr Watch
+        </div>
+
+        <p>
+            Convert Ethiopian Birr to currencies around the world
+        </p>
+
+    </header>
+
+
+    <!-- ================= ERROR ================= -->
+
+    <div
+        id="error"
+        class="message error-message hidden"
+    ></div>
+
+
+    <!-- ================= SUCCESS ================= -->
+
+    <div
+        id="success"
+        class="message success-message hidden"
+    ></div>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+
+        <!-- ================= API STATUS ================= -->
+
+        <section class="status-card">
+
+            <div>
+                <span class="status-dot"></span>
+
+                <span id="status">
+                    Loading exchange rates...
+                </span>
+            </div>
+
+            <button
+                id="refreshBtn"
+                class="refresh-btn"
+                type="button"
+            >
+                ↻ Refresh
+            </button>
+
+        </section>
+
+
+        <!-- ================= CONVERTER ================= -->
+
+        <section class="card">
+
+            <div class="card-header">
+
+                <h1>Currency Converter</h1>
+
+                <p>
+                    Convert Ethiopian Birr (ETB) to any available currency.
+                </p>
+
+            </div>
+
+
+            <!-- Amount -->
+
+            <div class="form-group">
+
+                <label for="amount">
+                    Amount in ETB
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-symbol">
+                        ETB
+                    </span>
+
+                    <input
+                        type="number"
+                        id="amount"
+                        placeholder="Enter amount"
+                        min="0"
+                        step="0.01"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- Currency Search -->
+
+            <div class="form-group">
+
+                <label for="currencySearch">
+                    Search Currency
+                </label>
+
+                <input
+                    type="text"
+                    id="currencySearch"
+                    placeholder="Search USD, EUR, Dollar..."
+                >
+
+            </div>
+
+
+            <!-- Currency -->
+
+            <div class="form-group">
+
+                <label for="currency">
+                    Choose Currency
+                </label>
+
+                <select id="currency">
+
+                    <option value="">
+                        Loading currencies...
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="button-group">
+
+                <button
+                    id="convertBtn"
+                    class="primary-btn"
+                    type="button"
+                >
+                    Convert
+                </button>
+
+
+                <button
+                    id="convertAllBtn"
+                    class="secondary-btn"
+                    type="button"
+                >
+                    Convert to All Currencies
+                </button>
+
+            </div>
+
+
+            <!-- Selected Result -->
+
+            <div
+                id="result"
+                class="result hidden"
+            ></div>
+
+
+        </section>
+
+
+        <!-- ================= ALL CURRENCIES ================= -->
+
+        <section
+            id="allCurrenciesSection"
+            class="card hidden"
+        >
+
+            <div class="card-header">
+
+                <h2>All Currency Results</h2>
+
+                <p>
+                    Current conversion from Ethiopian Birr
+                </p>
+
+            </div>
+
+
+            <div
+                id="allResults"
+                class="currency-grid"
+            ></div>
+
+        </section>
+
+
+        <!-- ================= WATCHLIST ================= -->
+
+        <section class="card">
+
+            <div class="card-header watchlist-header">
+
+                <div>
+
+                    <h2>My Watchlist</h2>
+
+                    <p>
+                        Save currencies you check frequently.
+                    </p>
+
+                </div>
+
+                <span
+                    id="watchCount"
+                    class="watch-count"
+                >
+                    0
+                </span>
+
+            </div>
+
+
+            <button
+                id="addWatchBtn"
+                class="watch-btn"
+                type="button"
+            >
+                ★ Add Selected Currency to Watchlist
+            </button>
+
+
+            <div
+                id="watchlistItems"
+                class="watchlist"
+            >
+
+                <div class="empty-watchlist">
+                    No currencies in your watchlist.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INFORMATION ================= -->
+
+        <section class="info-card">
+
+            <h3>About ET Birr Watch</h3>
+
+            <p>
+                Exchange rates are loaded from an online exchange-rate
+                service. Rates may change over time.
+            </p>
+
+            <p id="lastUpdated">
+                Last updated: Not available
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            ET Birr Watch © 2026
+        </p>
+
+        <p>
+            Ethiopian Birr Currency Converter
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

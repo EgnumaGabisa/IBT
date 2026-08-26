@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Doro Wot",
+    "category": "main",
+    "price": 280,
+    "description": "Spicy chicken stew with egg, served with injera.",
+    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 2,
+    "name": "Tibs",
+    "category": "main",
+    "price": 320,
+    "description": "Tender saut\u00e9ed beef with onion, pepper and herbs.",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 3,
+    "name": "Shiro",
+    "category": "main",
+    "price": 190,
+    "description": "Smooth chickpea stew seasoned with Ethiopian spices.",
+    "image": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 4,
+    "name": "Beyaynetu",
+    "category": "vegetarian",
+    "price": 240,
+    "description": "A colorful combination of vegetarian dishes with injera.",
+    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 5,
+    "name": "Firfir",
+    "category": "breakfast",
+    "price": 170,
+    "description": "Torn injera tossed with berbere sauce and seasoned butter.",
+    "image": "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 6,
+    "name": "Chechebsa",
+    "category": "breakfast",
+    "price": 160,
+    "description": "Flatbread pieces with spiced butter and honey.",
+    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 7,
+    "name": "Sambusa",
+    "category": "snack",
+    "price": 90,
+    "description": "Crispy pastry filled with seasoned lentils.",
+    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 8,
+    "name": "Buna",
+    "category": "drink",
+    "price": 70,
+    "description": "Freshly brewed Ethiopian coffee, served hot.",
+    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 9,
+    "name": "Macchiato",
+    "category": "drink",
+    "price": 85,
+    "description": "Espresso with a smooth layer of steamed milk.",
+    "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=80"
+  }
+]

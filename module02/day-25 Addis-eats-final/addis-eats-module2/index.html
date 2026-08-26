@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Addis Eats - discover and order delicious Ethiopian food.">
+  <title>Addis Eats | Ethiopian Food Delivery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="Addis Eats home">
+        <span class="brand-mark">AE</span>
+        <span>Addis Eats</span>
+      </a>
+      <button class="cart-button" id="cartButton" type="button" aria-controls="cartPanel" aria-expanded="false">
+        Cart <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Fresh • Local • Ethiopian</p>
+          <h1>Your favorite Addis food, one click away.</h1>
+          <p class="hero-copy">Discover traditional Ethiopian dishes, quick bites, and drinks from our curated menu.</p>
+          <a class="primary-link" href="#menu">Explore menu</a>
+        </div>
+        <div class="hero-card" aria-label="Today's featured meal">
+          <span>Today's pick</span>
+          <strong>Doro Wot</strong>
+          <small>Rich berbere chicken stew with egg</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="container menu-section" id="menu">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Our menu</p>
+          <h2>What are you craving?</h2>
+        </div>
+        <p id="resultCount" class="result-count" aria-live="polite">Loading menu...</p>
+      </div>
+
+      <div class="controls" aria-label="Menu controls">
+        <label class="search-box">
+          <span class="sr-only">Search menu</span>
+          <input id="searchInput" type="search" placeholder="Search dishes..." autocomplete="off">
+        </label>
+        <div class="filter-list" id="categoryFilters" role="group" aria-label="Filter by category"></div>
+      </div>
+
+      <div id="statusMessage" class="status" role="status" aria-live="polite">Loading menu...</div>
+      <div id="menuGrid" class="menu-grid"></div>
+    </section>
+  </main>
+
+  <dialog class="checkout-dialog" id="checkoutDialog">
+    <form class="checkout-form" id="checkoutForm">
+      <div class="checkout-form-header">
+        <div><p class="eyebrow">Complete your order</p><h2>Delivery & Payment</h2></div>
+        <button class="icon-button" id="closeCheckout" type="button" aria-label="Close checkout">×</button>
+      </div>
+
+      <label>Full name
+        <input id="customerName" type="text" required minlength="2" placeholder="Your full name">
+      </label>
+      <label>Phone number
+        <input id="customerPhone" type="tel" required placeholder="09XXXXXXXX">
+      </label>
+      <label>Delivery location
+        <select id="deliveryLocation" required>
+          <option value="">Choose location</option>
+          <option>Bole</option><option>Piassa</option><option>Mexico</option>
+          <option>CMC</option><option>Gerji</option><option>Kazanchis</option>
+          <option>4 Kilo</option><option>6 Kilo</option><option>Old Airport</option><option>Other</option>
+        </select>
+      </label>
+      <label>Address / landmark
+        <textarea id="deliveryAddress" required rows="3" placeholder="Street, building, landmark..."></textarea>
+      </label>
+
+      <fieldset>
+        <legend>Payment method</legend>
+        <label class="payment-option"><input type="radio" name="paymentMethod" value="Cash on delivery" checked> Cash on delivery</label>
+        <label class="payment-option"><input type="radio" name="paymentMethod" value="Demo card"> Demo card payment</label>
+        <label class="payment-option"><input type="radio" name="paymentMethod" value="Demo mobile money"> Demo mobile money</label>
+      </fieldset>
+
+      <div class="checkout-summary"><span>Order total</span><strong id="checkoutTotal">ETB 0</strong></div>
+      <button class="checkout-button" type="submit">Pay Now / Place Order</button>
+      <p id="paymentStatus" class="checkout-message" aria-live="polite"></p>
+    </form>
+  </dialog>
+
+
+  <aside class="cart-panel" id="cartPanel" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-header">
+      <div>
+        <p class="eyebrow">Your order</p>
+        <h2>Cart</h2>
+      </div>
+      <button class="icon-button" id="closeCart" type="button" aria-label="Close cart">×</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="total-row"><span>Subtotal</span><strong id="cartTotal">ETB 0</strong></div>
+      <button class="checkout-button" id="checkoutButton" type="button">Checkout</button>
+      <p id="checkoutMessage" class="checkout-message" aria-live="polite"></p>
+    </div>
+  </aside>
+  <div class="cart-overlay" id="cartOverlay" hidden></div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <strong>Addis Eats</strong>
+      <span>Built as a Module 2 project core.</span>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

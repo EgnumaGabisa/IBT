@@ -1,3 +1,5 @@
+<img width="1352" height="696" alt="code review" src="https://github.com/user-attachments/assets/591aef0a-c147-40f0-a0a5-cd7c13d16579" />
+<img width="1233" height="620" alt="auth pages" src="https://github.com/user-attachments/assets/8bbe061a-89c2-499b-b1d7-60c71e0a116e" />
 <img width="1336" height="685" alt="checkout page login" src="https://github.com/user-attachments/assets/18ea4f83-3a5e-4e20-82c8-47740293989c" />
 <img width="1279" height="651" alt="checkout page" src="https://github.com/user-attachments/assets/aeb4fe78-fed2-4f40-9b0c-63c1df455592" />
 <img width="1264" height="684" alt="cart page" src="https://github.com/user-attachments/assets/4c7460a0-1809-42f5-a26d-4e8c478d546c" />

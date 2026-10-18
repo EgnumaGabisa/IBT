@@ -1,0 +1,342 @@
+/* Page Container & Breadcrumbs */
+.register-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px 60px;
+}
+
+.register-container .breadcrumb {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: #8b5cf6;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.register-container .breadcrumb span {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Two-Column Grid Layout */
+.register-main {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Left Side Banner */
+.register-banner {
+  background-color: #fffaf0;
+  border: 1px solid #fee2e2;
+  border-radius: 12px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.member-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #fff1f2;
+  color: #8b0000;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  width: fit-content;
+}
+
+.register-banner h2 {
+  font-family: 'Georgia', serif;
+  font-size: 1.8rem;
+  color: #4a0404;
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.perk-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #f3f4f6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.perk-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.perk-card h4 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  color: #1e293b;
+}
+
+.perk-card p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* Right Side Card */
+.register-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.card-title {
+  font-family: 'Georgia', serif;
+  font-size: 1.5rem;
+  color: #8b0000;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Social Login Buttons */
+.social-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn-social {
+  flex: 1;
+  padding: 10px 14px;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-social:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.divider span {
+  padding: 0 12px;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Form Styling */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.register-card .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.register-card .form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.register-card input[type="text"],
+.register-card input[type="email"],
+.register-card input[type="password"],
+.register-card input[type="tel"],
+.register-card select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.register-card input:focus,
+.register-card select:focus {
+  border-color: #8b0000;
+  box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.1);
+}
+
+.error-text {
+  color: #dc2626;
+  font-size: 0.8rem;
+  margin-top: 2px;
+}
+
+/* Submit Button */
+.register-card .btn-submit {
+  background-color: #8b0000;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.register-card .btn-submit:hover {
+  background-color: #6a0000;
+}
+
+.login-footer-row {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.login-footer-row a {
+  color: #8b0000;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-footer-row a:hover {
+  text-decoration: underline;
+}
+
+/* Telebirr Modal */
+.telebirr-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.telebirr-modal-card {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.telebirr-modal-title {
+  font-size: 1.25rem;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.telebirr-form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.telebirr-form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #475569;
+}
+
+.telebirr-phone-input-group {
+  display: flex;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.telebirr-phone-prefix {
+  background-color: #f1f5f9;
+  padding: 10px 12px;
+  font-weight: 600;
+  color: #475569;
+  border-right: 1px solid #cbd5e1;
+}
+
+.telebirr-input {
+  border: none;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  outline: none;
+  flex: 1;
+}
+
+.telebirr-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.btn-telebirr-cancel {
+  padding: 8px 16px;
+  border: 1px solid #cbd5e1;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.btn-telebirr-submit {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .register-main {
+    grid-template-columns: 1fr;
+  }
+  
+  .social-buttons {
+    flex-direction: column;
+  }
+}

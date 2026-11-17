@@ -1,4 +1,3 @@
-import './App.css'; // <-- CSS-n akka hojjetuuf sararri kun zeraaraa dha
 import Header from './components/Header/Header';
 import Dish from './components/Dish/Dish';
 

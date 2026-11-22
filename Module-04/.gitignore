@@ -7,3 +7,7 @@ node_modules/
 *.zip
 *.zip
 *.zip
+
+day-57/campus-events-frontend/node_modules/
+day-57/campus-events-frontend/.next/
+day-57/campus-events-frontend/dist/
